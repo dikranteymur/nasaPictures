@@ -5,4 +5,10 @@
 //  Created by mdt on 1.12.2021.
 //
 
-import Foundation
+import UIKit
+
+let app = AppContainer()
+
+final class AppContainer {
+    let router = AppRouter()
+}
