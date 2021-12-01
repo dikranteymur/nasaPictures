@@ -30,10 +30,29 @@
                             <constraint firstItem="FW4-VY-5Ne" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="oEV-i3-UQ8"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ceL-Lo-Ugu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="79"/>
+            <point key="canvasLocation" x="944.92753623188412" y="78.348214285714278"/>
+        </scene>
+        <!--OpportunityNC-->
+        <scene sceneID="1qI-G0-Uma">
+            <objects>
+                <navigationController storyboardIdentifier="OpportunityNC" automaticallyAdjustsScrollViewInsets="NO" id="9sZ-sb-bqP" customClass="OpportunityNC" customModule="NasaPictures" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4kh-MF-JgE">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="NrR-S6-nEw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Htk-f1-zeL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="78.348214285714278"/>
         </scene>
     </scenes>
     <resources>

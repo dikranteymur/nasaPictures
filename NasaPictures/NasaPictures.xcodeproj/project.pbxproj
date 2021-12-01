@@ -16,7 +16,7 @@
 		B8AAA05B27577D0B005C8730 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AAA05A27577D0B005C8730 /* UIColorExtension.swift */; };
 		B8AAA05D27577D17005C8730 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AAA05C27577D17005C8730 /* UIFontExtension.swift */; };
 		B8AAA05F27578165005C8730 /* Nasa.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8AAA05E27578165005C8730 /* Nasa.ttf */; };
-		B8AAA06227579E65005C8730 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AAA06127579E65005C8730 /* BaseService.swift */; };
+		B8AAA06227579E65005C8730 /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AAA06127579E65005C8730 /* AppService.swift */; };
 		B8AAA06427579E76005C8730 /* BaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AAA06327579E76005C8730 /* BaseResponseModel.swift */; };
 		B8AAA06A2757A378005C8730 /* PopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AAA0692757A378005C8730 /* PopupVC.swift */; };
 		B8AAA06C2757A38E005C8730 /* PopupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8AAA06B2757A38E005C8730 /* PopupVC.xib */; };
@@ -32,6 +32,15 @@
 		B8AAA08F2757C842005C8730 /* OpportunityVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AAA08E2757C842005C8730 /* OpportunityVC.storyboard */; };
 		B8AAA0912757C851005C8730 /* OpportunityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AAA0902757C851005C8730 /* OpportunityVC.swift */; };
 		B8AAA0932757C85A005C8730 /* OpportunityBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AAA0922757C85A005C8730 /* OpportunityBuilder.swift */; };
+		B8E839552757CB0E0040D9E5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E839542757CB0E0040D9E5 /* Result.swift */; };
+		B8E8395B2757F0FF0040D9E5 /* CuriosityNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8395A2757F0FF0040D9E5 /* CuriosityNC.swift */; };
+		B8E8395D2757F8080040D9E5 /* OpportunityNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8395C2757F8080040D9E5 /* OpportunityNC.swift */; };
+		B8E8395F2757F82B0040D9E5 /* SpiritNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8395E2757F82B0040D9E5 /* SpiritNC.swift */; };
+		B8E839612757FACA0040D9E5 /* CuriosityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E839602757FACA0040D9E5 /* CuriosityViewModel.swift */; };
+		B8E839632757FADD0040D9E5 /* CuriosityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E839622757FADD0040D9E5 /* CuriosityModel.swift */; };
+		B8E839662757FB100040D9E5 /* CuriosityContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E839652757FB100040D9E5 /* CuriosityContracts.swift */; };
+		B8E839692757FD500040D9E5 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8E839682757FD500040D9E5 /* CollectionViewCell.xib */; };
+		B8E8396B2757FD620040D9E5 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8396A2757FD620040D9E5 /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +57,7 @@
 		B8AAA05A27577D0B005C8730 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		B8AAA05C27577D17005C8730 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		B8AAA05E27578165005C8730 /* Nasa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Nasa.ttf; sourceTree = "<group>"; };
-		B8AAA06127579E65005C8730 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		B8AAA06127579E65005C8730 /* AppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppService.swift; sourceTree = "<group>"; };
 		B8AAA06327579E76005C8730 /* BaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseModel.swift; sourceTree = "<group>"; };
 		B8AAA0692757A378005C8730 /* PopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupVC.swift; sourceTree = "<group>"; };
 		B8AAA06B2757A38E005C8730 /* PopupVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupVC.xib; sourceTree = "<group>"; };
@@ -64,6 +73,15 @@
 		B8AAA08E2757C842005C8730 /* OpportunityVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OpportunityVC.storyboard; sourceTree = "<group>"; };
 		B8AAA0902757C851005C8730 /* OpportunityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunityVC.swift; sourceTree = "<group>"; };
 		B8AAA0922757C85A005C8730 /* OpportunityBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunityBuilder.swift; sourceTree = "<group>"; };
+		B8E839542757CB0E0040D9E5 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		B8E8395A2757F0FF0040D9E5 /* CuriosityNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriosityNC.swift; sourceTree = "<group>"; };
+		B8E8395C2757F8080040D9E5 /* OpportunityNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunityNC.swift; sourceTree = "<group>"; };
+		B8E8395E2757F82B0040D9E5 /* SpiritNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritNC.swift; sourceTree = "<group>"; };
+		B8E839602757FACA0040D9E5 /* CuriosityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriosityViewModel.swift; sourceTree = "<group>"; };
+		B8E839622757FADD0040D9E5 /* CuriosityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriosityModel.swift; sourceTree = "<group>"; };
+		B8E839652757FB100040D9E5 /* CuriosityContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriosityContracts.swift; sourceTree = "<group>"; };
+		B8E839682757FD500040D9E5 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		B8E8396A2757FD620040D9E5 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +187,7 @@
 		B8AAA04E27577B82005C8730 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B8E839672757FD3E0040D9E5 /* CollectionViewCell */,
 				B8AAA0682757A35A005C8730 /* Popup */,
 			);
 			path = Views;
@@ -194,8 +213,9 @@
 		B8AAA06027579E3C005C8730 /* BaseService */ = {
 			isa = PBXGroup;
 			children = (
-				B8AAA06127579E65005C8730 /* BaseService.swift */,
+				B8AAA06127579E65005C8730 /* AppService.swift */,
 				B8AAA06327579E76005C8730 /* BaseResponseModel.swift */,
+				B8E839542757CB0E0040D9E5 /* Result.swift */,
 			);
 			path = BaseService;
 			sourceTree = "<group>";
@@ -204,8 +224,12 @@
 			isa = PBXGroup;
 			children = (
 				B8AAA0782757BBB4005C8730 /* CuriosityVC.storyboard */,
+				B8E8395A2757F0FF0040D9E5 /* CuriosityNC.swift */,
 				B8AAA0762757BBA6005C8730 /* CuriosityVC.swift */,
 				B8AAA07A2757BBC4005C8730 /* CuriosityBuilder.swift */,
+				B8E839602757FACA0040D9E5 /* CuriosityViewModel.swift */,
+				B8E839622757FADD0040D9E5 /* CuriosityModel.swift */,
+				B8E839652757FB100040D9E5 /* CuriosityContracts.swift */,
 			);
 			path = Curiosity;
 			sourceTree = "<group>";
@@ -214,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				B8AAA08E2757C842005C8730 /* OpportunityVC.storyboard */,
+				B8E8395C2757F8080040D9E5 /* OpportunityNC.swift */,
 				B8AAA0902757C851005C8730 /* OpportunityVC.swift */,
 				B8AAA0922757C85A005C8730 /* OpportunityBuilder.swift */,
 			);
@@ -224,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				B8AAA0822757BC6F005C8730 /* SpiritVC.storyboard */,
+				B8E8395E2757F82B0040D9E5 /* SpiritNC.swift */,
 				B8AAA0842757BC84005C8730 /* SpiritVC.swift */,
 				B8AAA0862757BC90005C8730 /* SpiritBuilder.swift */,
 			);
@@ -247,6 +273,15 @@
 				B8AAA0742757BB49005C8730 /* TabbarBuilder.swift */,
 			);
 			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		B8E839672757FD3E0040D9E5 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B8E839682757FD500040D9E5 /* CollectionViewCell.xib */,
+				B8E8396A2757FD620040D9E5 /* CollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +352,7 @@
 				B8AAA08F2757C842005C8730 /* OpportunityVC.storyboard in Resources */,
 				B8AAA0832757BC6F005C8730 /* SpiritVC.storyboard in Resources */,
 				B8AAA0792757BBB4005C8730 /* CuriosityVC.storyboard in Resources */,
+				B8E839692757FD500040D9E5 /* CollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,20 +405,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8E839612757FACA0040D9E5 /* CuriosityViewModel.swift in Sources */,
+				B8E839632757FADD0040D9E5 /* CuriosityModel.swift in Sources */,
+				B8E8396B2757FD620040D9E5 /* CollectionViewCell.swift in Sources */,
+				B8E8395B2757F0FF0040D9E5 /* CuriosityNC.swift in Sources */,
 				B8AAA0872757BC90005C8730 /* SpiritBuilder.swift in Sources */,
 				B8AAA05127577C6D005C8730 /* AppContainer.swift in Sources */,
 				B8AAA06427579E76005C8730 /* BaseResponseModel.swift in Sources */,
 				B8AAA0772757BBA6005C8730 /* CuriosityVC.swift in Sources */,
+				B8E839662757FB100040D9E5 /* CuriosityContracts.swift in Sources */,
 				B8AAA0712757BAC0005C8730 /* TabbarVC.swift in Sources */,
 				B8AAA0752757BB49005C8730 /* TabbarBuilder.swift in Sources */,
 				B8AAA05D27577D17005C8730 /* UIFontExtension.swift in Sources */,
 				B8AAA0932757C85A005C8730 /* OpportunityBuilder.swift in Sources */,
-				B8AAA06227579E65005C8730 /* BaseService.swift in Sources */,
+				B8E8395D2757F8080040D9E5 /* OpportunityNC.swift in Sources */,
+				B8AAA06227579E65005C8730 /* AppService.swift in Sources */,
 				B8AAA0912757C851005C8730 /* OpportunityVC.swift in Sources */,
 				B8AAA07B2757BBC4005C8730 /* CuriosityBuilder.swift in Sources */,
 				B8AAA03627577B4F005C8730 /* AppDelegate.swift in Sources */,
 				B8AAA05327577C75005C8730 /* AppRouter.swift in Sources */,
 				B8AAA05B27577D0B005C8730 /* UIColorExtension.swift in Sources */,
+				B8E839552757CB0E0040D9E5 /* Result.swift in Sources */,
+				B8E8395F2757F82B0040D9E5 /* SpiritNC.swift in Sources */,
 				B8AAA06A2757A378005C8730 /* PopupVC.swift in Sources */,
 				B8AAA0852757BC84005C8730 /* SpiritVC.swift in Sources */,
 			);

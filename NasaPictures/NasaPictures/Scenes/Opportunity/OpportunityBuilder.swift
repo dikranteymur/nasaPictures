@@ -8,10 +8,9 @@
 import UIKit
 
 final class OpportunityBuilder {
-    static func make() -> OpportunityVC {
-        let storyboard = UIStoryboard(name: "OpportunityVC", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "OpportunityVC") as! OpportunityVC
-        
-        return viewController
+    static func make() -> OpportunityNC {
+        let storyboard = UIStoryboard(name: "OpportunityVC", bundle: Bundle.main)
+        let navigationController = storyboard.instantiateViewController(withIdentifier: "OpportunityNC") as! OpportunityNC
+        return navigationController
     }
 }

@@ -17,18 +17,18 @@ class TabbarVC: UITabBarController {
     }
   
     private func initVC() {
-        let curiosityVC = CuriosityBuilder.make()
+        let curiosityNC = CuriosityBuilder.make()
         let curiosityItem = UITabBarItem(title: "Curiosity", image: UIImage(named: "mars1"), selectedImage: UIImage(named: "mars1"))
-        curiosityVC.tabBarItem = curiosityItem
+        curiosityNC.tabBarItem = curiosityItem
         
-        let opportunityVC = OpportunityBuilder.make()
+        let opportunityNC = OpportunityBuilder.make()
         let opportunityItem = UITabBarItem(title: "Opportunity", image: UIImage(named: "mars2"), selectedImage: UIImage(named: "mars2"))
-        opportunityVC.tabBarItem = opportunityItem
+        opportunityNC.tabBarItem = opportunityItem
         
-        let spiritVC = SpiritBuilder.make()
+        let spiritNC = SpiritBuilder.make()
         let spiritItem = UITabBarItem(title: "Spirit", image: UIImage(named: "mars3"), selectedImage: UIImage(named: "mars3"))
-        spiritVC.tabBarItem = spiritItem
+        spiritNC.tabBarItem = spiritItem
         
-        viewControllers = [curiosityVC, opportunityVC, spiritVC]
+        viewControllers = [curiosityNC, opportunityNC, spiritNC]
     }
 }

@@ -12,6 +12,9 @@ final class TabbarBuilder {
         let storyboard = UIStoryboard(name: "TabbarVC", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "TabbarVC") as! TabbarVC
         
+        UITabBar.appearance().tintColor = .orange
+        UITabBar.appearance().backgroundColor = .yellow
+        
         return viewController
     }
 }

@@ -8,10 +8,9 @@
 import UIKit
 
 final class SpiritBuilder {
-    static func make() -> SpiritVC {
-        let storyboard = UIStoryboard(name: "SpiritVC", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "SpiritVC") as! SpiritVC
-        
-        return viewController
+    static func make() -> SpiritNC {
+        let storyboard = UIStoryboard(name: "SpiritVC", bundle: Bundle.main)
+        let navigationController = storyboard.instantiateViewController(withIdentifier: "SpiritNC") as! SpiritNC
+        return navigationController
     }
 }
