@@ -9,8 +9,10 @@ import Foundation
 
 extension UserDefaults {
     private enum Status: String {
-        case filterList = "filterList"
-       
+        case filterListForCuriosity = "filterListForCuriosity"
+        case filterListForOpportunity = "filterListForOpportunity"
+        case filterListForSpirit = "filterListForSpirit"
+        
         var name: String {
             get {
                 return self.rawValue
@@ -18,15 +20,36 @@ extension UserDefaults {
         }
     }
     
-    class var filterList: [String] {
+    class var filterListForCuriosity: [String] {
         get {
-//            return UserDefaults.standard.array(forKey: Status.filterList.name) as! [String]
-            return UserDefaults.standard.stringArray(forKey: Status.filterList.name) ?? []
+            return UserDefaults.standard.stringArray(forKey: Status.filterListForCuriosity.name) ?? []
             
         }
         
         set {
-            UserDefaults.standard.setValue(newValue, forKey: Status.filterList.name)
+            UserDefaults.standard.setValue(newValue, forKey: Status.filterListForCuriosity.name)
+        }
+    }
+    
+    class var filterListForOpportunity: [String] {
+        get {
+            return UserDefaults.standard.stringArray(forKey: Status.filterListForOpportunity.name) ?? []
+            
+        }
+        
+        set {
+            UserDefaults.standard.setValue(newValue, forKey: Status.filterListForOpportunity.name)
+        }
+    }
+    
+    class var filterListForSpirit: [String] {
+        get {
+            return UserDefaults.standard.stringArray(forKey: Status.filterListForSpirit.name) ?? []
+            
+        }
+        
+        set {
+            UserDefaults.standard.setValue(newValue, forKey: Status.filterListForSpirit.name)
         }
     }
 }

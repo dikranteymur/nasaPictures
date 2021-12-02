@@ -16,8 +16,7 @@ class FilterVC: UIViewController {
     var allCamerasName: [String] = []
     
     var viewModel: FilterViewModelProtocol!
-    var hasSelectCell: Bool = false
-    var filteredList = UserDefaults.filterList
+    var filteredList = UserDefaults.filterListForCuriosity
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,15 +26,15 @@ class FilterVC: UIViewController {
         viewModel.delegate = self
         viewModel.load()
         
-        print("filterede List: \(filteredList)")
     }
     
     @IBAction func doneButtonTapped(_ sender: Any) {
-        
+        viewModel.sendFiltered(list: filteredList)
+        dismiss(animated: true)
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true)
     }
     
 }
@@ -50,7 +49,6 @@ extension FilterVC: UITableViewDelegate, UITableViewDataSource {
         cell.setCell(name: allCamerasName[indexPath.row])
         
         if filteredList.contains(allCamerasName[indexPath.row]) {
-            print(allCamerasName[indexPath.row])
             cell.makeSelect()
             cell.selectStatus = true
         } else {
@@ -64,25 +62,25 @@ extension FilterVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.cellForRow(at: indexPath) as! FilterTableViewCell
         if cell.selectStatus {
             cell.makeUnselect()
-            // cikar
+            // subtract from userdefaults
             if filteredList.contains(allCamerasName[indexPath.row]) {
                 if let index = filteredList.firstIndex(of: allCamerasName[indexPath.row]) {
                     filteredList.remove(at: index)
-                    UserDefaults.filterList = filteredList
+                    UserDefaults.filterListForCuriosity = filteredList
                 }
             }
             
         } else {
             cell.makeSelect()
-            // ekle
+            // add to userdefaults
             if !filteredList.contains(allCamerasName[indexPath.row]) {
                 filteredList.append(allCamerasName[indexPath.row])
-                UserDefaults.filterList = filteredList
+                UserDefaults.filterListForCuriosity = filteredList
             }
         }
         cell.selectStatus.toggle()
         
-        print("Filtered List: \(UserDefaults.filterList)")
+        print("Filtered List: \(UserDefaults.filterListForCuriosity)")
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -92,9 +90,6 @@ extension FilterVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension FilterVC: FilterViewModelDelegate {
-    func showFilter() {
-        
-    }
     
     func handleFilter(camerasName: [String]) {
         allCamerasName = camerasName

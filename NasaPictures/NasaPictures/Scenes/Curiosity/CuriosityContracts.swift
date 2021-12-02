@@ -19,7 +19,7 @@ enum CuriosityViewModelOutput {
     case updateTitle(String)
     case setLoading(Bool)
     case showPhotos([Photo])
-    case showFilteredPhotos([Photo])
+    case showFilteredList([String])
 }
 
 enum CuriosityViewRoute {

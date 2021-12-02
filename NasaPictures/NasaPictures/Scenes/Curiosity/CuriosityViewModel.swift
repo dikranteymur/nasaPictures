@@ -14,6 +14,10 @@ final class CuriosityViewModel: CuriosityViewModelProtocol {
     private var filteredPhotos: [Photo] = []
     private var camerasName: [String] = []
     private let service: AppService
+    private var isFiltered: Bool = false
+    private var filteredList: [String] = []
+    
+    var isPagination = false
     
     init(service: AppService) {
         self.service = service
@@ -31,10 +35,9 @@ final class CuriosityViewModel: CuriosityViewModelProtocol {
                 case .success(let model):
                     self.delegate?.handleOutput(.setLoading(false))
                     if let photos = model.photos {
-                        self.photos += photos
+                        self.photos = photos
                         self.delegate?.handleOutput(.showPhotos(self.photos))
                         print("Photos count: \(page)-\(self.photos.count)")
-//                        self.page += 1
                     }
                     break
                 case .failure(let error):
@@ -61,10 +64,15 @@ final class CuriosityViewModel: CuriosityViewModelProtocol {
         }
         
         let viewModel = FilterViewModel(list: camerasName)
+        viewModel.resendDelegate = self
         delegate?.navigate(to: .filter(viewModel))
-        delegate?.handleOutput(.showFilteredPhotos(filteredPhotos))
         
     }
 }
 
 
+extension CuriosityViewModel: SendFiltereListDelegate {
+    func sendFiltered(list: [String]) {
+        delegate?.handleOutput(.showFilteredList(list))
+    }
+}

@@ -9,6 +9,8 @@ import Foundation
 
 final class FilterViewModel: FilterViewModelProtocol {
     var delegate: FilterViewModelDelegate?
+    var resendDelegate: SendFiltereListDelegate?
+    
     private var list: [String]
     
     init(list: [String]) {
@@ -18,10 +20,9 @@ final class FilterViewModel: FilterViewModelProtocol {
     func load() {
         delegate?.handleFilter(camerasName: list)
     }
-    
-    func selectedFilter(for camaras: [Camera]) {
-        
+
+    func sendFiltered(list: [String]) {
+        resendDelegate?.sendFiltered(list: list)
     }
-    
     
 }

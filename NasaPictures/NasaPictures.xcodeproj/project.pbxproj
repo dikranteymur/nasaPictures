@@ -255,9 +255,9 @@
 				B8AAA0782757BBB4005C8730 /* CuriosityVC.storyboard */,
 				B8E8395A2757F0FF0040D9E5 /* CuriosityNC.swift */,
 				B8AAA0762757BBA6005C8730 /* CuriosityVC.swift */,
-				B8AAA07A2757BBC4005C8730 /* CuriosityBuilder.swift */,
 				B8E839602757FACA0040D9E5 /* CuriosityViewModel.swift */,
 				B8E839652757FB100040D9E5 /* CuriosityContracts.swift */,
+				B8AAA07A2757BBC4005C8730 /* CuriosityBuilder.swift */,
 				B8AE2618275916E5007A32B8 /* CuriosityModel.swift */,
 			);
 			path = Curiosity;
@@ -312,9 +312,9 @@
 			children = (
 				B8AE26022758BBBF007A32B8 /* FilterVC.storyboard */,
 				B8AE26002758BBA6007A32B8 /* FilterVC.swift */,
-				B8AE26062758C677007A32B8 /* FilterBuilder.swift */,
 				B8AE260A2758C990007A32B8 /* FilterViewModel.swift */,
 				B8AE260C2758C9A9007A32B8 /* FilterContracts.swift */,
+				B8AE26062758C677007A32B8 /* FilterBuilder.swift */,
 				B8AE26042758C55B007A32B8 /* FilterTableViewCell.swift */,
 			);
 			path = Filter;

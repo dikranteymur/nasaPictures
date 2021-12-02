@@ -7,13 +7,16 @@
 
 import Foundation
 
+protocol SendFiltereListDelegate {
+    func sendFiltered(list: [String])
+}
+
 protocol FilterViewModelDelegate {
-    func showFilter()
     func handleFilter(camerasName: [String])
 }
 
 protocol FilterViewModelProtocol {
     var delegate: FilterViewModelDelegate? { get set }
     func load()
-    func selectedFilter(for camaras: [Camera])
+    func sendFiltered(list: [String])
 }
