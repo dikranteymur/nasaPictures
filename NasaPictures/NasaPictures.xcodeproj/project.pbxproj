@@ -18,8 +18,7 @@
 		B8AAA05F27578165005C8730 /* Nasa.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8AAA05E27578165005C8730 /* Nasa.ttf */; };
 		B8AAA06227579E65005C8730 /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AAA06127579E65005C8730 /* AppService.swift */; };
 		B8AAA06427579E76005C8730 /* BaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AAA06327579E76005C8730 /* BaseResponseModel.swift */; };
-		B8AAA06A2757A378005C8730 /* PopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AAA0692757A378005C8730 /* PopupVC.swift */; };
-		B8AAA06C2757A38E005C8730 /* PopupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8AAA06B2757A38E005C8730 /* PopupVC.xib */; };
+		B8AAA06A2757A378005C8730 /* DetailPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AAA0692757A378005C8730 /* DetailPopupVC.swift */; };
 		B8AAA0712757BAC0005C8730 /* TabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AAA0702757BAC0005C8730 /* TabbarVC.swift */; };
 		B8AAA0732757BADE005C8730 /* TabbarVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AAA0722757BADE005C8730 /* TabbarVC.storyboard */; };
 		B8AAA0752757BB49005C8730 /* TabbarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AAA0742757BB49005C8730 /* TabbarBuilder.swift */; };
@@ -32,6 +31,16 @@
 		B8AAA08F2757C842005C8730 /* OpportunityVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AAA08E2757C842005C8730 /* OpportunityVC.storyboard */; };
 		B8AAA0912757C851005C8730 /* OpportunityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AAA0902757C851005C8730 /* OpportunityVC.swift */; };
 		B8AAA0932757C85A005C8730 /* OpportunityBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AAA0922757C85A005C8730 /* OpportunityBuilder.swift */; };
+		B8AE26012758BBA6007A32B8 /* FilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE26002758BBA6007A32B8 /* FilterVC.swift */; };
+		B8AE26032758BBBF007A32B8 /* FilterVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AE26022758BBBF007A32B8 /* FilterVC.storyboard */; };
+		B8AE26052758C55B007A32B8 /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE26042758C55B007A32B8 /* FilterTableViewCell.swift */; };
+		B8AE26072758C677007A32B8 /* FilterBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE26062758C677007A32B8 /* FilterBuilder.swift */; };
+		B8AE260B2758C990007A32B8 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE260A2758C990007A32B8 /* FilterViewModel.swift */; };
+		B8AE260D2758C9A9007A32B8 /* FilterContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE260C2758C9A9007A32B8 /* FilterContracts.swift */; };
+		B8AE260F2759009B007A32B8 /* DetailPopupBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE260E2759009B007A32B8 /* DetailPopupBuilder.swift */; };
+		B8AE261127590119007A32B8 /* DetailPopupVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AE261027590119007A32B8 /* DetailPopupVC.storyboard */; };
+		B8AE261327590410007A32B8 /* DetailPopupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE261227590410007A32B8 /* DetailPopupViewModel.swift */; };
+		B8AE261527590421007A32B8 /* DetailPopupContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE261427590421007A32B8 /* DetailPopupContracts.swift */; };
 		B8E839552757CB0E0040D9E5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E839542757CB0E0040D9E5 /* Result.swift */; };
 		B8E8395B2757F0FF0040D9E5 /* CuriosityNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8395A2757F0FF0040D9E5 /* CuriosityNC.swift */; };
 		B8E8395D2757F8080040D9E5 /* OpportunityNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8395C2757F8080040D9E5 /* OpportunityNC.swift */; };
@@ -41,6 +50,9 @@
 		B8E839662757FB100040D9E5 /* CuriosityContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E839652757FB100040D9E5 /* CuriosityContracts.swift */; };
 		B8E839692757FD500040D9E5 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8E839682757FD500040D9E5 /* CollectionViewCell.xib */; };
 		B8E8396B2757FD620040D9E5 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8396A2757FD620040D9E5 /* CollectionViewCell.swift */; };
+		B8E8397427581C630040D9E5 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8E8397327581C630040D9E5 /* LoadingView.xib */; };
+		B8E8397627581C740040D9E5 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8397527581C740040D9E5 /* LoadingView.swift */; };
+		B8E8397827581D850040D9E5 /* mars_nasa_mission.json in Resources */ = {isa = PBXBuildFile; fileRef = B8E8397727581D850040D9E5 /* mars_nasa_mission.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,8 +71,7 @@
 		B8AAA05E27578165005C8730 /* Nasa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Nasa.ttf; sourceTree = "<group>"; };
 		B8AAA06127579E65005C8730 /* AppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppService.swift; sourceTree = "<group>"; };
 		B8AAA06327579E76005C8730 /* BaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseModel.swift; sourceTree = "<group>"; };
-		B8AAA0692757A378005C8730 /* PopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupVC.swift; sourceTree = "<group>"; };
-		B8AAA06B2757A38E005C8730 /* PopupVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupVC.xib; sourceTree = "<group>"; };
+		B8AAA0692757A378005C8730 /* DetailPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPopupVC.swift; sourceTree = "<group>"; };
 		B8AAA0702757BAC0005C8730 /* TabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarVC.swift; sourceTree = "<group>"; };
 		B8AAA0722757BADE005C8730 /* TabbarVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabbarVC.storyboard; sourceTree = "<group>"; };
 		B8AAA0742757BB49005C8730 /* TabbarBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarBuilder.swift; sourceTree = "<group>"; };
@@ -73,6 +84,16 @@
 		B8AAA08E2757C842005C8730 /* OpportunityVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OpportunityVC.storyboard; sourceTree = "<group>"; };
 		B8AAA0902757C851005C8730 /* OpportunityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunityVC.swift; sourceTree = "<group>"; };
 		B8AAA0922757C85A005C8730 /* OpportunityBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunityBuilder.swift; sourceTree = "<group>"; };
+		B8AE26002758BBA6007A32B8 /* FilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVC.swift; sourceTree = "<group>"; };
+		B8AE26022758BBBF007A32B8 /* FilterVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FilterVC.storyboard; sourceTree = "<group>"; };
+		B8AE26042758C55B007A32B8 /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
+		B8AE26062758C677007A32B8 /* FilterBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterBuilder.swift; sourceTree = "<group>"; };
+		B8AE260A2758C990007A32B8 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
+		B8AE260C2758C9A9007A32B8 /* FilterContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterContracts.swift; sourceTree = "<group>"; };
+		B8AE260E2759009B007A32B8 /* DetailPopupBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPopupBuilder.swift; sourceTree = "<group>"; };
+		B8AE261027590119007A32B8 /* DetailPopupVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailPopupVC.storyboard; sourceTree = "<group>"; };
+		B8AE261227590410007A32B8 /* DetailPopupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPopupViewModel.swift; sourceTree = "<group>"; };
+		B8AE261427590421007A32B8 /* DetailPopupContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPopupContracts.swift; sourceTree = "<group>"; };
 		B8E839542757CB0E0040D9E5 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		B8E8395A2757F0FF0040D9E5 /* CuriosityNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriosityNC.swift; sourceTree = "<group>"; };
 		B8E8395C2757F8080040D9E5 /* OpportunityNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunityNC.swift; sourceTree = "<group>"; };
@@ -82,6 +103,9 @@
 		B8E839652757FB100040D9E5 /* CuriosityContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriosityContracts.swift; sourceTree = "<group>"; };
 		B8E839682757FD500040D9E5 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		B8E8396A2757FD620040D9E5 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		B8E8397327581C630040D9E5 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		B8E8397527581C740040D9E5 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		B8E8397727581D850040D9E5 /* mars_nasa_mission.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mars_nasa_mission.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +185,8 @@
 				B8AAA0652757A34C005C8730 /* Curiosity */,
 				B8AAA0662757A351005C8730 /* Opportunity */,
 				B8AAA0672757A354005C8730 /* Spirit */,
+				B8AE25FF2758BB91007A32B8 /* Filter */,
+				B8AAA0682757A35A005C8730 /* DetailPopup */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -187,8 +213,8 @@
 		B8AAA04E27577B82005C8730 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B8E8396E27581B680040D9E5 /* LoadingView */,
 				B8E839672757FD3E0040D9E5 /* CollectionViewCell */,
-				B8AAA0682757A35A005C8730 /* Popup */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -256,13 +282,16 @@
 			path = Spirit;
 			sourceTree = "<group>";
 		};
-		B8AAA0682757A35A005C8730 /* Popup */ = {
+		B8AAA0682757A35A005C8730 /* DetailPopup */ = {
 			isa = PBXGroup;
 			children = (
-				B8AAA06B2757A38E005C8730 /* PopupVC.xib */,
-				B8AAA0692757A378005C8730 /* PopupVC.swift */,
+				B8AE261027590119007A32B8 /* DetailPopupVC.storyboard */,
+				B8AAA0692757A378005C8730 /* DetailPopupVC.swift */,
+				B8AE260E2759009B007A32B8 /* DetailPopupBuilder.swift */,
+				B8AE261227590410007A32B8 /* DetailPopupViewModel.swift */,
+				B8AE261427590421007A32B8 /* DetailPopupContracts.swift */,
 			);
-			path = Popup;
+			path = DetailPopup;
 			sourceTree = "<group>";
 		};
 		B8AAA06D2757A45B005C8730 /* Tabbar */ = {
@@ -275,6 +304,19 @@
 			path = Tabbar;
 			sourceTree = "<group>";
 		};
+		B8AE25FF2758BB91007A32B8 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				B8AE26022758BBBF007A32B8 /* FilterVC.storyboard */,
+				B8AE26002758BBA6007A32B8 /* FilterVC.swift */,
+				B8AE26062758C677007A32B8 /* FilterBuilder.swift */,
+				B8AE260A2758C990007A32B8 /* FilterViewModel.swift */,
+				B8AE260C2758C9A9007A32B8 /* FilterContracts.swift */,
+				B8AE26042758C55B007A32B8 /* FilterTableViewCell.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
 		B8E839672757FD3E0040D9E5 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +324,16 @@
 				B8E8396A2757FD620040D9E5 /* CollectionViewCell.swift */,
 			);
 			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		B8E8396E27581B680040D9E5 /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				B8E8397327581C630040D9E5 /* LoadingView.xib */,
+				B8E8397527581C740040D9E5 /* LoadingView.swift */,
+				B8E8397727581D850040D9E5 /* mars_nasa_mission.json */,
+			);
+			path = LoadingView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,14 +397,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8AAA05F27578165005C8730 /* Nasa.ttf in Resources */,
-				B8AAA06C2757A38E005C8730 /* PopupVC.xib in Resources */,
 				B8AAA0732757BADE005C8730 /* TabbarVC.storyboard in Resources */,
 				B8AAA04227577B51005C8730 /* LaunchScreen.storyboard in Resources */,
 				B8AAA03F27577B51005C8730 /* Assets.xcassets in Resources */,
 				B8AAA08F2757C842005C8730 /* OpportunityVC.storyboard in Resources */,
+				B8E8397827581D850040D9E5 /* mars_nasa_mission.json in Resources */,
 				B8AAA0832757BC6F005C8730 /* SpiritVC.storyboard in Resources */,
 				B8AAA0792757BBB4005C8730 /* CuriosityVC.storyboard in Resources */,
+				B8AE26032758BBBF007A32B8 /* FilterVC.storyboard in Resources */,
 				B8E839692757FD500040D9E5 /* CollectionViewCell.xib in Resources */,
+				B8AE261127590119007A32B8 /* DetailPopupVC.storyboard in Resources */,
+				B8E8397427581C630040D9E5 /* LoadingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +464,7 @@
 				B8E839632757FADD0040D9E5 /* CuriosityModel.swift in Sources */,
 				B8E8396B2757FD620040D9E5 /* CollectionViewCell.swift in Sources */,
 				B8E8395B2757F0FF0040D9E5 /* CuriosityNC.swift in Sources */,
+				B8AE261527590421007A32B8 /* DetailPopupContracts.swift in Sources */,
 				B8AAA0872757BC90005C8730 /* SpiritBuilder.swift in Sources */,
 				B8AAA05127577C6D005C8730 /* AppContainer.swift in Sources */,
 				B8AAA06427579E76005C8730 /* BaseResponseModel.swift in Sources */,
@@ -420,14 +476,22 @@
 				B8AAA0932757C85A005C8730 /* OpportunityBuilder.swift in Sources */,
 				B8E8395D2757F8080040D9E5 /* OpportunityNC.swift in Sources */,
 				B8AAA06227579E65005C8730 /* AppService.swift in Sources */,
+				B8AE261327590410007A32B8 /* DetailPopupViewModel.swift in Sources */,
 				B8AAA0912757C851005C8730 /* OpportunityVC.swift in Sources */,
 				B8AAA07B2757BBC4005C8730 /* CuriosityBuilder.swift in Sources */,
+				B8AE260D2758C9A9007A32B8 /* FilterContracts.swift in Sources */,
 				B8AAA03627577B4F005C8730 /* AppDelegate.swift in Sources */,
+				B8AE26052758C55B007A32B8 /* FilterTableViewCell.swift in Sources */,
+				B8E8397627581C740040D9E5 /* LoadingView.swift in Sources */,
 				B8AAA05327577C75005C8730 /* AppRouter.swift in Sources */,
+				B8AE26012758BBA6007A32B8 /* FilterVC.swift in Sources */,
+				B8AE260F2759009B007A32B8 /* DetailPopupBuilder.swift in Sources */,
+				B8AE260B2758C990007A32B8 /* FilterViewModel.swift in Sources */,
 				B8AAA05B27577D0B005C8730 /* UIColorExtension.swift in Sources */,
+				B8AE26072758C677007A32B8 /* FilterBuilder.swift in Sources */,
 				B8E839552757CB0E0040D9E5 /* Result.swift in Sources */,
 				B8E8395F2757F82B0040D9E5 /* SpiritNC.swift in Sources */,
-				B8AAA06A2757A378005C8730 /* PopupVC.swift in Sources */,
+				B8AAA06A2757A378005C8730 /* DetailPopupVC.swift in Sources */,
 				B8AAA0852757BC84005C8730 /* SpiritVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

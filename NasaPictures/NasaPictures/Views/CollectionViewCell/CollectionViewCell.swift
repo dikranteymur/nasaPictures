@@ -14,7 +14,13 @@ class CollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        contentView.layer.cornerRadius = 4
+        iniUI()
+    }
+    
+    func iniUI() {
+        contentView.layer.cornerRadius = 10
+        contentView.layer.borderColor = UIColor.gray.cgColor
+        contentView.layer.borderWidth = 1
     }
     
     func setCell(image: String) {

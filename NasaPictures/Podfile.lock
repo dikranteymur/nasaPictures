@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.4.3)
+  - lottie-ios (3.2.3)
   - ObjectMapper (4.2.0)
   - SDWebImage (5.12.1):
     - SDWebImage/Core (= 5.12.1)
@@ -8,6 +9,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - lottie-ios
   - ObjectMapper
   - SDWebImage
   - SwiftyJSON
@@ -15,16 +17,18 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - lottie-ios
     - ObjectMapper
     - SDWebImage
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
   SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 8d6e32bb1c3d28e8c584925945bd58efd0834070
+PODFILE CHECKSUM: 0e720454324bf63e56b4dda301be115f3d79c6c7
 
 COCOAPODS: 1.11.2

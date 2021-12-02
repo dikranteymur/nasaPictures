@@ -10,5 +10,6 @@ target 'NasaPictures' do
   pod 'ObjectMapper'
   pod 'SwiftyJSON'
   pod 'SDWebImage'
+  pod 'lottie-ios'
 
 end

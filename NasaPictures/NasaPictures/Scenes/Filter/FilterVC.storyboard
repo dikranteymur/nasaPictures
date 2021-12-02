@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nasa.ttf">
+            <string>Nasa</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--FilterVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="FilterVC" id="Y6W-OH-hqX" customClass="FilterVC" customModule="NasaPictures" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="GS2-yZ-BZU">
+                                <rect key="frame" x="10" y="44" width="394" height="31"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNY-rb-ZlW">
+                                        <rect key="frame" x="0.0" y="0.0" width="68.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="nxS-dh-VMk"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a Camera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8GC-Em-D0f">
+                                        <rect key="frame" x="128" y="0.0" width="148.5" height="31"/>
+                                        <fontDescription key="fontDescription" name="Nasa" family="Nasa" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUg-By-W7X">
+                                        <rect key="frame" x="335.5" y="0.0" width="58.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Done"/>
+                                        <connections>
+                                            <action selector="doneButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6hu-Wa-Xr0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HIK-cu-gbO">
+                                <rect key="frame" x="10" y="83" width="394" height="476"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="476" id="9Ve-Y2-iHj"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FilterTableViewCell" id="4jh-7i-5VD" customClass="FilterTableViewCell" customModule="NasaPictures" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="49.5" width="354" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4jh-7i-5VD" id="Uhn-sZ-7f4">
+                                            <rect key="frame" x="0.0" y="0.0" width="354" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zl0-MF-4Cf">
+                                                    <rect key="frame" x="10" y="8" width="38" height="28"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="unselect"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wW8-AR-Asx">
+                                                    <rect key="frame" x="58" y="11.5" width="41.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wW8-AR-Asx" firstAttribute="leading" secondItem="zl0-MF-4Cf" secondAttribute="trailing" constant="10" id="68x-fZ-GCi"/>
+                                                <constraint firstItem="zl0-MF-4Cf" firstAttribute="leading" secondItem="Uhn-sZ-7f4" secondAttribute="leading" constant="10" id="9Ky-u1-XWA"/>
+                                                <constraint firstItem="zl0-MF-4Cf" firstAttribute="centerY" secondItem="Uhn-sZ-7f4" secondAttribute="centerY" id="DVR-Cm-E0D"/>
+                                                <constraint firstItem="wW8-AR-Asx" firstAttribute="centerY" secondItem="Uhn-sZ-7f4" secondAttribute="centerY" id="WHh-DV-zHs"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cameraNameLabel" destination="wW8-AR-Asx" id="OgC-cm-lLT"/>
+                                            <outlet property="selectUnselectButton" destination="zl0-MF-4Cf" id="9PZ-yo-X0i"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bu-Hw-giC">
+                                <rect key="frame" x="302.5" y="831" width="101.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Unselect All"/>
+                                <connections>
+                                    <action selector="selectOrUnselectAllButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Y2f-xT-Ria"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="8bu-Hw-giC" secondAttribute="trailing" constant="10" id="Imu-EB-YI9"/>
+                            <constraint firstItem="GS2-yZ-BZU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="VXA-0j-ybr"/>
+                            <constraint firstItem="GS2-yZ-BZU" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="YSe-B7-fWH"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HIK-cu-gbO" secondAttribute="trailing" constant="10" id="cWf-1V-ewt"/>
+                            <constraint firstItem="HIK-cu-gbO" firstAttribute="top" secondItem="GS2-yZ-BZU" secondAttribute="bottom" constant="8" symbolic="YES" id="cY3-ja-iO8"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="GS2-yZ-BZU" secondAttribute="trailing" constant="10" id="j9g-uW-LVi"/>
+                            <constraint firstItem="8bu-Hw-giC" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="nN5-pL-5nk"/>
+                            <constraint firstItem="HIK-cu-gbO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="x1r-gi-8D4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="gNY-rb-ZlW" id="sC3-Tn-Jvq"/>
+                        <outlet property="doneButton" destination="rUg-By-W7X" id="hoh-qw-qxO"/>
+                        <outlet property="unselectAllButton" destination="8bu-Hw-giC" id="10w-oz-Q2j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="73.913043478260875" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="unselect" width="14" height="14"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

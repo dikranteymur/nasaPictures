@@ -10,18 +10,19 @@ import Foundation
 protocol CuriosityViewModelProtocol {
     var delegate: CuriosityViewModelDelegate? { get set }
     func load()
-    func selectCamera(at index: Int)
-    // TODO: filtreye gore load fonksiyonu eklenebilir
+    func selectPhoto(at index: Int)
+    func selectFilter(camera: CamerasName)
 }
 
 enum CuriosityViewModelOutput {
     case updateTitle(String)
     case setLoading(Bool)
     case showPhotos([Photo])
+    case showFilteredPhotos([Photo])
 }
 
 enum CuriosityViewRoute {
-    case detail
+    case detail(DetailPopupViewModel)
     case filter
 }
 

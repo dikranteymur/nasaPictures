@@ -13,7 +13,7 @@ final class CuriosityBuilder {
         let navigationController = storyboard.instantiateViewController(withIdentifier: "CuriosityNC") as! CuriosityNC
         
         if let vc = navigationController.viewControllers.first as? CuriosityVC {
-            vc.viewModel = CuriosityViewModel()
+            vc.viewModel = CuriosityViewModel(service: app.service)
         }
         
         
