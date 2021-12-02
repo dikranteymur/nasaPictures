@@ -10,6 +10,10 @@ import UIKit
 class CuriosityVC: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var paginationView: UIView!
+    @IBOutlet weak var paginationLabel: UILabel!
+    
+    private var page = 1
     
     var viewModel: CuriosityViewModelProtocol! {
         didSet {
@@ -23,16 +27,21 @@ class CuriosityVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.load()
+        viewModel.load(page: page)
+        viewModel.setTitle()
         
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
         navigationController?.navigationBar.tintColor = .darkYellow
+        
+        paginationView.backgroundColor = .black.withAlphaComponent(0.3)
+        paginationLabel.textColor = .darkYellow
+        paginationLabel.font = .nasaMedium(size: 20)
     }
     
     @IBAction func filterButtonTapped(_ sender: Any) {
-
+        viewModel.selectFilter(model: photos)
     }
     
 }
@@ -55,6 +64,17 @@ extension CuriosityVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.selectPhoto(at: indexPath.row)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        paginationLabel.text = "\(indexPath.row)/\(photos.count)"
+        let lastItem = photos.count - 1
+        if indexPath.row == lastItem  {
+            page += 1
+            viewModel.load(page: page)
+            
+        }
+    }
 }
 
 extension CuriosityVC: UICollectionViewDelegateFlowLayout {
@@ -76,7 +96,8 @@ extension CuriosityVC: CuriosityViewModelDelegate {
                 photos = array
                 collectionView.reloadData()
             case .showFilteredPhotos(let filteredArray):
-                print(filteredArray)
+//                print(filteredArray)
+                print("deneme")
         }
     }
     
@@ -86,10 +107,9 @@ extension CuriosityVC: CuriosityViewModelDelegate {
                 let viewController = DetailPopupBuilder.make(with: detailPopupViewModel)
                 viewController.modalTransitionStyle = .coverVertical
                 present(viewController, animated: true, completion: nil)
-            case .filter:
-//                let filterVC = FilterBuilder.make()
-//                present(filterVC, animated: true, completion: nil)
-                print("filter")
+            case .filter(let filterViewModel):
+                let viewController = FilterBuilder.make(with: filterViewModel)
+                present(viewController, animated: true, completion: nil)
         }
     }
     

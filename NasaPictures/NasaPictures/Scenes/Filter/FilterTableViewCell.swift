@@ -9,23 +9,33 @@ import UIKit
 
 class FilterTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var selectUnselectButton: UIButton!
+    @IBOutlet weak var selectUnselectImageView: UIImageView!
     @IBOutlet weak var cameraNameLabel: UILabel!
+    
+    var selectStatus: Bool = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        selectUnselectButton.imageView?.image = UIImage(named: "unselect")
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        selectUnselectButton.imageView?.image = UIImage(named: "select")
+
         
+    }
+    
+    func setCell(name: String) {
+        cameraNameLabel.text = name
+
+    }
+    
+    func makeSelect() {
+        selectUnselectImageView.image = UIImage(named: "select")
+    }
+    
+    func makeUnselect() {
+        selectUnselectImageView.image = UIImage(named: "unselect")
     }
 
 }

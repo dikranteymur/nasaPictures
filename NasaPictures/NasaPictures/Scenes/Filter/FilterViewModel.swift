@@ -9,13 +9,18 @@ import Foundation
 
 final class FilterViewModel: FilterViewModelProtocol {
     var delegate: FilterViewModelDelegate?
+    private var list: [String]
+    
+    init(list: [String]) {
+        self.list = list
+    }
     
     func load() {
-        delegate?.showFilter()
+        delegate?.handleFilter(camerasName: list)
     }
     
     func selectedFilter(for camaras: [Camera]) {
-        delegate?.handleFilter()
+        
     }
     
     

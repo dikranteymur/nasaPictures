@@ -9,19 +9,25 @@ import UIKit
 
 class FilterVC: UIViewController {
 
+    @IBOutlet weak var cameraNameTableView: UITableView!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
-    @IBOutlet weak var unselectAllButton: UIButton!
     
-    let cameras: [CamerasName] = []
+    var allCamerasName: [String] = []
     
     var viewModel: FilterViewModelProtocol!
+    var hasSelectCell: Bool = false
+    var filteredList = UserDefaults.filterList
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        viewModel.delegate = self
+        cameraNameTableView.delegate = self
+        cameraNameTableView.dataSource = self
+        
+        viewModel.delegate = self
         viewModel.load()
         
+        print("filterede List: \(filteredList)")
     }
     
     @IBAction func doneButtonTapped(_ sender: Any) {
@@ -32,35 +38,67 @@ class FilterVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func selectOrUnselectAllButtonTapped(_ sender: Any) {
-        
-    }
-    
 }
 
 extension FilterVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cameras.count
+        return allCamerasName.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FilterTableViewCell", for: indexPath) as! FilterTableViewCell
+        cell.setCell(name: allCamerasName[indexPath.row])
         
-        
+        if filteredList.contains(allCamerasName[indexPath.row]) {
+            print(allCamerasName[indexPath.row])
+            cell.makeSelect()
+            cell.selectStatus = true
+        } else {
+            cell.makeUnselect()
+            cell.selectStatus = false
+        }
         return  cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
+        let cell = tableView.cellForRow(at: indexPath) as! FilterTableViewCell
+        if cell.selectStatus {
+            cell.makeUnselect()
+            // cikar
+            if filteredList.contains(allCamerasName[indexPath.row]) {
+                if let index = filteredList.firstIndex(of: allCamerasName[indexPath.row]) {
+                    filteredList.remove(at: index)
+                    UserDefaults.filterList = filteredList
+                }
+            }
+            
+        } else {
+            cell.makeSelect()
+            // ekle
+            if !filteredList.contains(allCamerasName[indexPath.row]) {
+                filteredList.append(allCamerasName[indexPath.row])
+                UserDefaults.filterList = filteredList
+            }
+        }
+        cell.selectStatus.toggle()
         
+        print("Filtered List: \(UserDefaults.filterList)")
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
     }
     
 }
 
-//extension FilterVC: FilterViewModelDelegate {
-//    func showFilter() {
-//
-//    }
-//
-//
-//}
+extension FilterVC: FilterViewModelDelegate {
+    func showFilter() {
+        
+    }
+    
+    func handleFilter(camerasName: [String]) {
+        allCamerasName = camerasName
+    }
+    
+    
+}

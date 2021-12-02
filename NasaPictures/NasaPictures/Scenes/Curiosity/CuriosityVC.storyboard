@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,17 +25,24 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="10" minY="5" maxX="10" maxY="5"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="wIG-CH-oUv">
-                                        <rect key="frame" x="10" y="5" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5QJ-8g-hNe">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k3z-0X-Tqc">
+                                <rect key="frame" x="0.0" y="842" width="414" height="20"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLd-IZ-z4f">
+                                        <rect key="frame" x="207" y="10" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="1Ug-1Y-tcV"/>
+                                    <constraint firstItem="wLd-IZ-z4f" firstAttribute="centerY" secondItem="k3z-0X-Tqc" secondAttribute="centerY" id="6jS-Oq-IMT"/>
+                                    <constraint firstItem="wLd-IZ-z4f" firstAttribute="centerX" secondItem="k3z-0X-Tqc" secondAttribute="centerX" id="rb3-bP-hde"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -44,7 +50,10 @@
                             <constraint firstItem="Cp5-sr-yZy" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="5sF-5H-jE2"/>
                             <constraint firstItem="Cp5-sr-yZy" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="7OI-Nz-RNr"/>
                             <constraint firstItem="Cp5-sr-yZy" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="E4d-LV-AWG"/>
+                            <constraint firstItem="k3z-0X-Tqc" firstAttribute="leading" secondItem="Cp5-sr-yZy" secondAttribute="leading" id="S7W-nL-bjn"/>
                             <constraint firstItem="Cp5-sr-yZy" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="mLt-zG-lXV"/>
+                            <constraint firstItem="k3z-0X-Tqc" firstAttribute="trailing" secondItem="Cp5-sr-yZy" secondAttribute="trailing" id="uG6-v1-2aV"/>
+                            <constraint firstItem="k3z-0X-Tqc" firstAttribute="bottom" secondItem="Cp5-sr-yZy" secondAttribute="bottom" id="zxP-ha-0Zh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xvi-Ra-2zl">
@@ -56,6 +65,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Cp5-sr-yZy" id="ldg-cE-7fF"/>
+                        <outlet property="paginationLabel" destination="wLd-IZ-z4f" id="coQ-ce-Dsc"/>
+                        <outlet property="paginationView" destination="k3z-0X-Tqc" id="jEh-7x-Zhg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

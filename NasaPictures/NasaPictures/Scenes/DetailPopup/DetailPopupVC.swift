@@ -30,7 +30,8 @@ class DetailPopupVC: UIViewController {
     
     func initUI() {
         backgroundView.layer.cornerRadius = 12
-        imageView.layer.borderWidth = 2
+        imageView.layer.cornerRadius = 12
+        imageView.layer.borderWidth = 3
         imageView.layer.borderColor = UIColor.darkYellow.cgColor
         
     }

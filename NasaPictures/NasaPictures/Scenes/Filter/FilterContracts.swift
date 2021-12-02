@@ -9,7 +9,7 @@ import Foundation
 
 protocol FilterViewModelDelegate {
     func showFilter()
-    func handleFilter()
+    func handleFilter(camerasName: [String])
 }
 
 protocol FilterViewModelProtocol {

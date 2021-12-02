@@ -9,9 +9,10 @@ import Foundation
 
 protocol CuriosityViewModelProtocol {
     var delegate: CuriosityViewModelDelegate? { get set }
-    func load()
+    func load(page: Int)
+    func setTitle()
     func selectPhoto(at index: Int)
-    func selectFilter(camera: CamerasName)
+    func selectFilter(model: [Photo])
 }
 
 enum CuriosityViewModelOutput {
@@ -23,7 +24,7 @@ enum CuriosityViewModelOutput {
 
 enum CuriosityViewRoute {
     case detail(DetailPopupViewModel)
-    case filter
+    case filter(FilterViewModel)
 }
 
 protocol CuriosityViewModelDelegate {
