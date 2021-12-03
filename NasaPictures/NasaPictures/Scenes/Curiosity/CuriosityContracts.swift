@@ -24,7 +24,7 @@ enum CuriosityViewModelOutput {
 
 enum CuriosityViewRoute {
     case detail(DetailPopupViewModel)
-    case filter(FilterViewModel)
+    case filter(FilterViewModel, MainBuilderModel)
 }
 
 protocol CuriosityViewModelDelegate {

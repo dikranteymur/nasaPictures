@@ -12,9 +12,11 @@ final class FilterViewModel: FilterViewModelProtocol {
     var resendDelegate: SendFiltereListDelegate?
     
     private var list: [String]
+    private var mainBuilderModel: MainBuilderModel
     
-    init(list: [String]) {
+    init(list: [String], mainBuilderModel: MainBuilderModel) {
         self.list = list
+        self.mainBuilderModel = mainBuilderModel
     }
     
     func load() {

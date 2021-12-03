@@ -8,7 +8,7 @@
 import Foundation
 
 extension UserDefaults {
-    private enum Status: String {
+    enum Status: String {
         case filterListForCuriosity = "filterListForCuriosity"
         case filterListForOpportunity = "filterListForOpportunity"
         case filterListForSpirit = "filterListForSpirit"

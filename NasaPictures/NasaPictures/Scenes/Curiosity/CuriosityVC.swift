@@ -23,10 +23,10 @@ class CuriosityVC: UIViewController {
             viewModel.delegate = self
         }
     }
+    var mainBuilderModel: MainBuilderModel?
     
     private var photos: [Photo] = []
     private var filteredPhotos: [Photo] = []
-    var sheetController: UISheetPresentationController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,8 +125,8 @@ extension CuriosityVC: CuriosityViewModelDelegate {
                 let viewController = DetailPopupBuilder.make(with: detailPopupViewModel)
                 viewController.modalTransitionStyle = .coverVertical
                 present(viewController, animated: true, completion: nil)
-            case .filter(let filterViewModel):
-                let viewController = FilterBuilder.make(with: filterViewModel)
+            case .filter(let filterViewModel, let mainBuilderModel):
+                let viewController = FilterBuilder.make(with: filterViewModel, mainModel: mainBuilderModel)
                 present(viewController, animated: true, completion: nil)
         }
     }

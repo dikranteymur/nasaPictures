@@ -16,13 +16,14 @@ class FilterVC: UIViewController {
     var allCamerasName: [String] = []
     
     var viewModel: FilterViewModelProtocol!
-    var filteredList = UserDefaults.filterListForCuriosity
+    var mainModel: MainBuilderModel!
+    var filteredList: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         cameraNameTableView.delegate = self
         cameraNameTableView.dataSource = self
-        
+        filteredList = mainModel.getFilterListFromUserdefault()
         viewModel.delegate = self
         viewModel.load()
         
@@ -30,7 +31,7 @@ class FilterVC: UIViewController {
     
     @IBAction func doneButtonTapped(_ sender: Any) {
         viewModel.sendFiltered(list: filteredList)
-        UserDefaults.filterListForCuriosity = filteredList
+        mainModel.setFilterListToUserdefault(list: filteredList)
         
         dismiss(animated: true)
     }
@@ -79,8 +80,6 @@ extension FilterVC: UITableViewDelegate, UITableViewDataSource {
             }
         }
         cell.selectStatus.toggle()
-        
-        print("Filtered List: \(UserDefaults.filterListForCuriosity)")
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

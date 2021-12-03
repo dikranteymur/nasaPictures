@@ -16,7 +16,7 @@ final class AppService {
     private let baseUrl = "https://api.nasa.gov/mars-photos/api/v1/rovers/"
     private let apiKey = "SxHjglRWgEQXF55qBf35X61gRk9kl75I6ilYNJme"
     
-    public func sendRequest(roverName: Rovers, page: Int, completion: @escaping (Result<BaseResponseModel>) -> Void) {
+    public func sendRequest(roverName: ScreenName, page: Int, completion: @escaping (Result<BaseResponseModel>) -> Void) {
         var url: String = ""
         let extensionUrl = "/photos?sol=1000&api_key=\(apiKey)&page=" + String(page)
         
@@ -29,7 +29,6 @@ final class AppService {
                 url = baseUrl + roverName.rawValue + extensionUrl
         }
         AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { response in
-
             switch response.result {
                 case .success(let value):
                     let result = value as! NSDictionary

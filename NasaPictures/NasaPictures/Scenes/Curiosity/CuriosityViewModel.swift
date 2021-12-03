@@ -16,19 +16,24 @@ final class CuriosityViewModel: CuriosityViewModelProtocol {
     private let service: AppService
     private var isFiltered: Bool = false
     private var filteredList: [String] = []
+
+    var mainBuilderModel: MainBuilderModel
     
-    init(service: AppService) {
+    init(service: AppService, mainBuilderModel: MainBuilderModel) {
         self.service = service
+        self.mainBuilderModel = mainBuilderModel
     }
     
     func setTitle() {
-        delegate?.handleOutput(.updateTitle("Curiosity"))
+
+        delegate?.handleOutput(.updateTitle(mainBuilderModel.screenName.name))
+        
     }
     
     func load(page: Int) {
         delegate?.handleOutput(.setLoading(true))
-        
-        service.sendRequest(roverName: .Curiosity, page: page) { result in
+       
+        service.sendRequest(roverName: mainBuilderModel.screenName, page: page) { result in
             switch result {
                 case .success(let model):
                     if let photos = model.photos {
@@ -44,7 +49,8 @@ final class CuriosityViewModel: CuriosityViewModelProtocol {
                             }
                         }
                     }
-                    UserDefaults.filterListForCuriosity = self.camerasName
+                    
+                    self.mainBuilderModel.setFilterListToUserdefault(list: self.camerasName)
                     self.delegate?.handleOutput(.showFilteredList(self.camerasName))
                     
                     self.delegate?.handleOutput(.setLoading(false))
@@ -74,9 +80,9 @@ final class CuriosityViewModel: CuriosityViewModelProtocol {
             }
         }
         
-        let viewModel = FilterViewModel(list: camerasName)
+        let viewModel = FilterViewModel(list: camerasName, mainBuilderModel: mainBuilderModel)
         viewModel.resendDelegate = self
-        delegate?.navigate(to: .filter(viewModel))
+        delegate?.navigate(to: .filter(viewModel, mainBuilderModel))
         
     }
 }
