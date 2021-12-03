@@ -13,7 +13,6 @@ final class TabbarBuilder {
         let viewController = storyboard.instantiateViewController(withIdentifier: "TabbarVC") as! TabbarVC
         
         UITabBar.appearance().tintColor = .orange
-        UITabBar.appearance().backgroundColor = .yellow
         
         return viewController
     }

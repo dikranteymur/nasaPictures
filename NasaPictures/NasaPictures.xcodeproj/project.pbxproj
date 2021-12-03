@@ -51,7 +51,6 @@
 		B8E839662757FB100040D9E5 /* CuriosityContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E839652757FB100040D9E5 /* CuriosityContracts.swift */; };
 		B8E839692757FD500040D9E5 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8E839682757FD500040D9E5 /* CollectionViewCell.xib */; };
 		B8E8396B2757FD620040D9E5 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8396A2757FD620040D9E5 /* CollectionViewCell.swift */; };
-		B8E8397427581C630040D9E5 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8E8397327581C630040D9E5 /* LoadingView.xib */; };
 		B8E8397627581C740040D9E5 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8397527581C740040D9E5 /* LoadingView.swift */; };
 		B8E8397827581D850040D9E5 /* mars_nasa_mission.json in Resources */ = {isa = PBXBuildFile; fileRef = B8E8397727581D850040D9E5 /* mars_nasa_mission.json */; };
 /* End PBXBuildFile section */
@@ -105,7 +104,6 @@
 		B8E839652757FB100040D9E5 /* CuriosityContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriosityContracts.swift; sourceTree = "<group>"; };
 		B8E839682757FD500040D9E5 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		B8E8396A2757FD620040D9E5 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		B8E8397327581C630040D9E5 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		B8E8397527581C740040D9E5 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		B8E8397727581D850040D9E5 /* mars_nasa_mission.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mars_nasa_mission.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -332,7 +330,6 @@
 		B8E8396E27581B680040D9E5 /* LoadingView */ = {
 			isa = PBXGroup;
 			children = (
-				B8E8397327581C630040D9E5 /* LoadingView.xib */,
 				B8E8397527581C740040D9E5 /* LoadingView.swift */,
 				B8E8397727581D850040D9E5 /* mars_nasa_mission.json */,
 			);
@@ -410,7 +407,6 @@
 				B8AE26032758BBBF007A32B8 /* FilterVC.storyboard in Resources */,
 				B8E839692757FD500040D9E5 /* CollectionViewCell.xib in Resources */,
 				B8AE261127590119007A32B8 /* DetailPopupVC.storyboard in Resources */,
-				B8E8397427581C630040D9E5 /* LoadingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

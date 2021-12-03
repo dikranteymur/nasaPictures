@@ -13,10 +13,10 @@ class CuriosityVC: UIViewController {
     @IBOutlet weak var paginationView: UIView!
     @IBOutlet weak var paginationLabel: UILabel!
     
-    private var page = 1
-    private var filteredList: [String] = []
+    private var filterNames: [String] = []
     private var currentIndex = 0
     var control = false
+    var page = 1
     
     var viewModel: CuriosityViewModelProtocol! {
         didSet {
@@ -25,22 +25,29 @@ class CuriosityVC: UIViewController {
     }
     
     private var photos: [Photo] = []
+    private var filteredPhotos: [Photo] = []
     var sheetController: UISheetPresentationController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.load(page: page)
+        viewModel.load(page: 1)
         viewModel.setTitle()
         
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
+        
+        initUI()
+    }
+    
+    func initUI() {
         navigationController?.navigationBar.tintColor = .darkYellow
         
         paginationView.backgroundColor = .black.withAlphaComponent(0.3)
         paginationLabel.textColor = .darkYellow
         paginationLabel.font = .nasaMedium(size: 20)
+        
     }
     
     @IBAction func filterButtonTapped(_ sender: Any) {
@@ -51,12 +58,12 @@ class CuriosityVC: UIViewController {
 
 extension CuriosityVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photos.count
+        return filteredPhotos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
-        if let imageUrl = photos[indexPath.row].img_src {
+        if let imageUrl = filteredPhotos[indexPath.row].img_src {
             cell.setCell(image: imageUrl)
         }
         
@@ -64,25 +71,21 @@ extension CuriosityVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.selectPhoto(at: indexPath.row)
+        viewModel.selectPhoto(at: indexPath.row, list: filteredPhotos)
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         currentIndex = indexPath.row
-        paginationLabel.text = "\(indexPath.row)/\(photos.count)"
-
+        paginationLabel.text = "\(indexPath.row)/\(filteredPhotos.count)"
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let position = scrollView.contentOffset.y
-        if position > collectionView.contentSize.height - scrollView.frame.size.height - 100 {
-            if !control {
-                page += 1
-                viewModel.load(page: page)
-            }
-            
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if scrollView.contentOffset.y > scrollView.contentSize.height - scrollView.frame.size.height {
+            page += 1
+            viewModel.load(page: page)
         }
     }
+
 }
 
 extension CuriosityVC: UICollectionViewDelegateFlowLayout {
@@ -102,18 +105,16 @@ extension CuriosityVC: CuriosityViewModelDelegate {
                 LoadingView.shared.startLoading(viewController: self, isLoading: isLoading)
                 control = isLoading
             case .showPhotos(let array):
-                if filteredList.isEmpty {
-                    photos += array
+                photos = array
+                if filterNames.isEmpty {
+                    filteredPhotos.removeAll()
                 } else {
-                    photos += array.filter({ filteredList.contains($0.camera?.name ?? "")})
+                    filteredPhotos = photos.filter({ filterNames.contains($0.camera?.name ?? "") })
                 }
                 collectionView.reloadData()
             case .showFilteredList(let filteredList):
-                self.filteredList = filteredList
-                page = 1
-                viewModel.load(page: page)
-                photos.removeAll()
-                photos = photos.filter({ filteredList.contains($0.camera?.name ?? "")})
+                self.filterNames = filteredList
+                filteredPhotos = photos.filter({ filteredList.contains($0.camera?.name ?? "") })
                 collectionView.reloadData()
         }
     }

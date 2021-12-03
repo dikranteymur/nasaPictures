@@ -11,7 +11,7 @@ protocol CuriosityViewModelProtocol {
     var delegate: CuriosityViewModelDelegate? { get set }
     func load(page: Int)
     func setTitle()
-    func selectPhoto(at index: Int)
+    func selectPhoto(at index: Int, list: [Photo])
     func selectFilter(model: [Photo])
 }
 

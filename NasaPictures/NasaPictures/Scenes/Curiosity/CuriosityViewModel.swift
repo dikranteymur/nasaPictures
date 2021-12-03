@@ -17,8 +17,6 @@ final class CuriosityViewModel: CuriosityViewModelProtocol {
     private var isFiltered: Bool = false
     private var filteredList: [String] = []
     
-    var isPagination = false
-    
     init(service: AppService) {
         self.service = service
     }
@@ -33,22 +31,35 @@ final class CuriosityViewModel: CuriosityViewModelProtocol {
         service.sendRequest(roverName: .Curiosity, page: page) { result in
             switch result {
                 case .success(let model):
-                    self.delegate?.handleOutput(.setLoading(false))
                     if let photos = model.photos {
-                        self.photos = photos
+                        self.photos.append(contentsOf: photos)
                         self.delegate?.handleOutput(.showPhotos(self.photos))
-                        print("Photos count: \(page)-\(self.photos.count)")
                     }
+                    
+                    // Set Filter list
+                    for photo in self.photos {
+                        if let name = photo.camera?.name {
+                            if !self.camerasName.contains(name) {
+                                self.camerasName.append(name)
+                            }
+                        }
+                    }
+                    UserDefaults.filterListForCuriosity = self.camerasName
+                    self.delegate?.handleOutput(.showFilteredList(self.camerasName))
+                    
+                    self.delegate?.handleOutput(.setLoading(false))
                     break
                 case .failure(let error):
                     print(error)
                     break
             }
         }
+        
+        
     }
     
-    func selectPhoto(at index: Int) {
-        let photo = photos[index]
+    func selectPhoto(at index: Int, list: [Photo]) {
+        let photo = list[index]
         let viewModel = DetailPopupViewModel(model: photo)
         delegate?.navigate(to: .detail(viewModel))
         
