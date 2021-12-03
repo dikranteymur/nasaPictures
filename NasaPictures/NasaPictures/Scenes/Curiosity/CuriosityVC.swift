@@ -43,7 +43,7 @@ class CuriosityVC: UIViewController {
     
     func initUI() {
         navigationController?.navigationBar.tintColor = .darkYellow
-        
+        navigationController?.navigationBar.titleTextAttributes = [.font : UIFont.nasaMedium(size: 18)]
         paginationView.backgroundColor = .black.withAlphaComponent(0.3)
         paginationLabel.textColor = .darkYellow
         paginationLabel.font = .nasaMedium(size: 20)

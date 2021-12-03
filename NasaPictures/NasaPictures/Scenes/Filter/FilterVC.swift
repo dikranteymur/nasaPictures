@@ -30,6 +30,8 @@ class FilterVC: UIViewController {
     
     @IBAction func doneButtonTapped(_ sender: Any) {
         viewModel.sendFiltered(list: filteredList)
+        UserDefaults.filterListForCuriosity = filteredList
+        
         dismiss(animated: true)
     }
     
@@ -66,7 +68,6 @@ extension FilterVC: UITableViewDelegate, UITableViewDataSource {
             if filteredList.contains(allCamerasName[indexPath.row]) {
                 if let index = filteredList.firstIndex(of: allCamerasName[indexPath.row]) {
                     filteredList.remove(at: index)
-                    UserDefaults.filterListForCuriosity = filteredList
                 }
             }
             
@@ -75,7 +76,6 @@ extension FilterVC: UITableViewDelegate, UITableViewDataSource {
             // add to userdefaults
             if !filteredList.contains(allCamerasName[indexPath.row]) {
                 filteredList.append(allCamerasName[indexPath.row])
-                UserDefaults.filterListForCuriosity = filteredList
             }
         }
         cell.selectStatus.toggle()
